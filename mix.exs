@@ -22,9 +22,9 @@ defmodule ElixirStructureManager.MixProject do
   defp package() do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE*"],
-      maintainers: ["Juan Esteban"],
+      maintainers: ["Santiago Calle Gomez"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/juanes1a/elixir_structure_manager"}
+      links: %{"GitHub" => "https://github.com/santicalleg/elixir_scaffold"}
     ]
   end
 
