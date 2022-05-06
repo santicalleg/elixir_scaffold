@@ -1,6 +1,6 @@
-defmodule ElixirStructureManager.Core.ApplyTemplates do
+defmodule ElixirScaffold.Core.ApplyTemplates do
 
-  alias ElixirStructureManager.Core.DataTypeUtils
+  alias ElixirScaffold.Core.DataTypeUtils
   require Logger
 
   def create_variables_list(atom_name, module_name) do

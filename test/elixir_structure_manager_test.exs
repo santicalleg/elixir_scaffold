@@ -1,8 +1,8 @@
-defmodule ElixirStructureManagerTest do
+defmodule ElixirScaffoldTest do
   use ExUnit.Case
-  doctest ElixirStructureManager
+  doctest ElixirScaffold
 
   test "greets the world" do
-    assert ElixirStructureManager.hello() == :world
+    assert ElixirScaffold.hello() == :world
   end
 end

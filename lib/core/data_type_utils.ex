@@ -1,4 +1,4 @@
-defmodule ElixirStructureManager.Core.DataTypeUtils do
+defmodule ElixirScaffold.Core.DataTypeUtils do
 
   def normalize(%{__struct__: _} = value), do: value
 

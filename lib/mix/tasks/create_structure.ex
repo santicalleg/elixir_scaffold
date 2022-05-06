@@ -6,21 +6,21 @@ defmodule Mix.Tasks.CreateStructure do
       $ mix create_structure [application_name]
   """
 
-  alias ElixirStructureManager.Core.ApplyTemplates
+  alias ElixirScaffold.Core.ApplyTemplates
   require Logger
 
   use Mix.Task
 
   @structure_path "./lib/create_structure/parameters/create_structure.json"
   @version Mix.Project.config()[:version]
-  
+
   @switches [dev: :boolean, assets: :boolean, ecto: :boolean,
              app: :string, module: :string, web_module: :string,
              database: :string, binary_id: :boolean, html: :boolean,
              gettext: :boolean, umbrella: :boolean, verbose: :boolean,
              live: :boolean, dashboard: :boolean, install: :boolean,
              prefix: :string, mailer: :boolean]
-  
+
   def run ([]) do
     Mix.Tasks.Help.run(["create_structure"])
   end
@@ -39,10 +39,10 @@ defmodule Mix.Tasks.CreateStructure do
       error -> Logger.error("Ocurrio un error creando la estructura: #{inspect(error)}")
     end
   end
-  
+
   def run(argv) do
     IO.inspect(argv)
-    
+
     opts = parse_opts(argv)
     IO.inspect(opts)
 
@@ -55,7 +55,7 @@ defmodule Mix.Tasks.CreateStructure do
         IO.inspect(base_path)
     end
   end
-  
+
   defp parse_opts(argv) do
     case OptionParser.parse(argv, strict: @switches) do
       {opts, argv, []} ->
@@ -64,7 +64,7 @@ defmodule Mix.Tasks.CreateStructure do
         Mix.raise "Invalid option: " <> switch_to_string(switch)
     end
   end
-  
+
   defp switch_to_string({name, nil}), do: name
   defp switch_to_string({name, val}), do: name <> "=" <> val
 end

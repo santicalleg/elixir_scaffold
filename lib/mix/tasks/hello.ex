@@ -1,6 +1,6 @@
 defmodule Hello do
 
-  alias ElixirStructureManager.Core.ApplyTemplates
+  alias ElixirScaffold.Core.ApplyTemplates
   require Logger
 
   @structure_path "./lib/create_structure/parameters/create_structure.json"

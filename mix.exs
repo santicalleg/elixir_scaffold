@@ -1,9 +1,9 @@
-defmodule ElixirStructureManager.MixProject do
+defmodule ElixirScaffold.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :elixir_structure_manager,
+      app: :elixir_scaffold,
       version: "0.1.0",
       elixir: "~> 1.12",
       build_embedded: Mix.env == :prod,

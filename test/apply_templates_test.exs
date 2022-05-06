@@ -1,6 +1,6 @@
 defmodule ApplyTemplatesTest do
   use ExUnit.Case
-  alias ElixirStructureManager.Core.ApplyTemplates
+  alias ElixirScaffold.Core.ApplyTemplates
 
   import Mock
 
@@ -29,7 +29,7 @@ defmodule ApplyTemplatesTest do
       assert %{test: "replace content"} = res
     end
   end
-  
+
   test "should load template file wit herror" do
     with_mock File, [read: fn(_path) -> {:err, "error reading file"} end] do
       res = ApplyTemplates.load_template_file("/some_path")
@@ -87,7 +87,7 @@ defmodule ApplyTemplatesTest do
       {File, [], [read: fn(_path) -> {:ok, "{module_name} - :{application_name_atom}"} end]},
       {File, [], [write: fn(_path, _content) -> :ok end]}
     ]) do
-      
+
       res = ApplyTemplates.create_folder(template, "test_folder", variable_list)
       assert :ok == res
 
