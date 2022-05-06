@@ -16,9 +16,10 @@ defmodule ElixirStructureManager.MixProject do
 
   defp description() do
     """
-    Library for manipulating and validating IBAN account numbers.
+    Plugin to generate a clean architecture scaffold.
     """
   end
+
   defp package() do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE*"],
