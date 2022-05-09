@@ -73,6 +73,7 @@ defmodule ElixirScaffold.Core.ApplyTemplates do
       normalized
     else
       err ->
+        Mix.shell().error("Error loading consumers #{inspect(err)}")
         Logger.error("Error loading consumers #{inspect(err)}")
         err
     end
