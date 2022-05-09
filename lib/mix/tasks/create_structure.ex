@@ -32,6 +32,7 @@ defmodule Mix.Tasks.CreateStructure do
 
   @shortdoc "Creates a new clean architecture application."
   def run([application_name]) do
+    IO.inspect(__DIR__)
     IO.inspect(@structure_path)
     IO.inspect(Path.basename(File.cwd!))
     Mix.shell().info(@structure_path)
