@@ -11,8 +11,8 @@ defmodule Mix.Tasks.CreateStructure do
 
   use Mix.Task
 
-  @structure_path Path.expand("../../create_structure/parameters/create_structure.json", __DIR__)
-  
+  @structure_path Path.expand("../../../priv/create_structure/parameters/create_structure.json", __DIR__)
+
   @version Mix.Project.config()[:version]
 
   @switches [dev: :boolean, assets: :boolean, ecto: :boolean,

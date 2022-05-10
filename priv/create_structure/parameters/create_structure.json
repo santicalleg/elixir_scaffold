@@ -5,7 +5,7 @@
         "files": [
             {
               "name": "mix.exs",
-              "template_path": "./lib/create_structure/templates/mix.txt"
+              "template_path": "./priv/create_structure/templates/mix.txt"
             }
         ]
     },
@@ -15,19 +15,19 @@
         "files": [
             {
                 "name": "config.exs",
-                "template_path": "./lib/create_structure/templates/config.txt"
+                "template_path": "./priv/create_structure/templates/config.txt"
             },
             {
                 "name": "dev.exs",
-                "template_path": "./lib/create_structure/templates/dev.txt"
+                "template_path": "./priv/create_structure/templates/dev.txt"
             },
             {
                 "name": "prod.exs",
-                "template_path": "./lib/create_structure/templates/prod.txt"
+                "template_path": "./priv/create_structure/templates/prod.txt"
             },
             {
                 "name": "test.exs",
-                "template_path": "./lib/create_structure/templates/test.txt"
+                "template_path": "./priv/create_structure/templates/test.txt"
             }
         ]
     },
@@ -42,7 +42,7 @@
         "files": [
             {
                 "name": "api_rest.ex",
-                "template_path": "./lib/create_structure/templates/api_rest.txt"
+                "template_path": "./priv/create_structure/templates/api_rest.txt"
             }
         ]
     },
@@ -67,11 +67,11 @@
         "files": [
             {
                 "name": "app_config.ex",
-                "template_path": "./lib/create_structure/templates/app_config.txt"
+                "template_path": "./priv/create_structure/templates/app_config.txt"
             },
             {
                 "name": "config_holder.ex",
-                "template_path": "./lib/create_structure/templates/config_holder.txt"
+                "template_path": "./priv/create_structure/templates/config_holder.txt"
             }
         ]
     },
@@ -81,15 +81,15 @@
         "files": [
             {
                 "name": "certificates_admin.ex",
-                "template_path": "./lib/create_structure/templates/certificates_admin.txt"
+                "template_path": "./priv/create_structure/templates/certificates_admin.txt"
             },
             {
                 "name": "data_type_utils.ex",
-                "template_path": "./lib/create_structure/templates/data_type_utils.txt"
+                "template_path": "./priv/create_structure/templates/data_type_utils.txt"
             },
 	    {
                 "name": "custom_telemetry.ex",
-                "template_path": "./lib/create_structure/templates/custom_telemetry.txt"
+                "template_path": "./priv/create_structure/templates/custom_telemetry.txt"
             }
         ]
     },
@@ -99,7 +99,7 @@
         "files": [
             {
                 "name": "application.ex",
-                "template_path": "./lib/create_structure/templates/application.txt"
+                "template_path": "./priv/create_structure/templates/application.txt"
             }
         ]
     }

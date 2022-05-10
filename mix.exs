@@ -22,7 +22,7 @@ defmodule ElixirScaffold.MixProject do
 
   defp package() do
     [
-      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      files: ["lib", "priv", "mix.exs", "README*", "LICENSE*"],
       maintainers: ["Santiago Calle Gomez"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/santicalleg/elixir_scaffold"}
