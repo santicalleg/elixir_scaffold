@@ -67,18 +67,10 @@ defmodule ElixirScaffold.Core.ApplyTemplates do
   end
 
   def load_template_file(read_path) do
-    IO.puts "=====load_template_file====="
-    IO.inspect(Application.app_dir(:elixir_scaffold))
-    IO.inspect(read_path)
-    IO.inspect(__DIR__)
-    with {:ok, content} <- File.read(read_path),
-         {:ok, parsed} <- Poison.decode(content),
-         normalized <- DataTypeUtils.normalize(parsed) do
-      normalized
+    with {content, _ignored} <- Code.eval_file(read_path) do
+      content
     else
       err ->
-        IO.inspect(err)
-        Mix.shell().error("Error loading consumers #{inspect(err)}")
         Logger.error("Error loading consumers #{inspect(err)}")
         err
     end
