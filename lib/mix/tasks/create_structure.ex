@@ -11,8 +11,7 @@ defmodule Mix.Tasks.CreateStructure do
 
   use Mix.Task
 
-  @structure_path Path.expand("../../../priv/create_structure/parameters/create_structure.json", __DIR__)
-
+  # @structure_path Path.expand("../../../priv/create_structure/parameters/create_structure.json", __DIR__)
   @version Mix.Project.config()[:version]
 
   @switches [dev: :boolean, assets: :boolean, ecto: :boolean,
@@ -33,11 +32,9 @@ defmodule Mix.Tasks.CreateStructure do
   @shortdoc "Creates a new clean architecture application."
   def run([application_name]) do
     IO.inspect(__DIR__)
-    IO.inspect(@structure_path)
-    IO.inspect(Path.basename(File.cwd!))
-    Mix.shell().info(@structure_path)
+    structure_path = Application.app_dir(:elixir_scaffold) <> "/priv/create_structure/parameters/create_structure.json"
     with {:ok, atom_name, module_name} <- ApplyTemplates.manage_application_name(application_name),
-         template <- ApplyTemplates.load_template_file(@structure_path),
+         template <- ApplyTemplates.load_template_file(structure_path),
          {:ok, variable_list} <- ApplyTemplates.create_variables_list(atom_name, module_name) do
       ApplyTemplates.create_folder(template, atom_name, variable_list)
     else

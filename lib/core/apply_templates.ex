@@ -68,6 +68,7 @@ defmodule ElixirScaffold.Core.ApplyTemplates do
 
   def load_template_file(read_path) do
     IO.puts "=====load_template_file====="
+    IO.inspect(Application.app_dir(:elixir_scaffold))
     IO.inspect(read_path)
     IO.inspect(__DIR__)
     with {:ok, content} <- File.read(read_path),
