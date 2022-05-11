@@ -2,7 +2,7 @@ defmodule ElixirScaffold.Core.ApplyTemplates do
 
   require Logger
 
-  @app_path Application.app_dir(:elixir_structure_manager)
+  @app_path Application.app_dir(:elixir_scaffold)
 
   def create_variables_list(atom_name, module_name) do
     {
