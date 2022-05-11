@@ -66,13 +66,8 @@ defmodule ElixirScaffold.Core.ApplyTemplates do
   end
 
   def load_template_file(read_path) do
-    with {content, _ignored} <- Code.eval_file(read_path) do
-      content
-    else
-      err ->
-        Logger.error("Error loading consumers #{inspect(err)}")
-        err
-    end
+    {content, _ignored} = Code.eval_file(read_path)
+    content
   end
 
   def create_content(path) do
