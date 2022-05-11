@@ -2,8 +2,6 @@ defmodule ElixirScaffold.Core.ApplyTemplates do
 
   require Logger
 
-  @app_path Application.app_dir(:elixir_scaffold)
-
   def create_variables_list(atom_name, module_name) do
     {
       :ok,
@@ -38,7 +36,7 @@ defmodule ElixirScaffold.Core.ApplyTemplates do
     app_path = Application.app_dir(:elixir_scaffold)
     with file_full_path <- folder_path <> "/" <> name,
          :ok <- create_content(file_full_path),
-         {:ok, file_content} <- File.read(@app_path <> template_path),
+         {:ok, file_content} <- File.read(app_path <> template_path),
          full_file_content <- replace_variables(variable_list, file_content),
          :ok <- File.write(file_full_path, full_file_content) do
       create_files(tail, folder_path, variable_list)
