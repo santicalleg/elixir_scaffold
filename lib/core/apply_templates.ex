@@ -35,9 +35,10 @@ defmodule ElixirScaffold.Core.ApplyTemplates do
 
   defp create_files([head | tail], folder_path, variable_list) do
     %{name: name, template_path: template_path} = head
+    app_path = Application.app_dir(:elixir_scaffold)
     with file_full_path <- folder_path <> "/" <> name,
          :ok <- create_content(file_full_path),
-         {:ok, file_content} <- File.read(IO.inspect(@app_path <> template_path)),
+         {:ok, file_content} <- File.read(@app_path <> template_path),
          full_file_content <- replace_variables(variable_list, file_content),
          :ok <- File.write(file_full_path, full_file_content) do
       create_files(tail, folder_path, variable_list)

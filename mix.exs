@@ -4,7 +4,7 @@ defmodule ElixirScaffold.MixProject do
   def project do
     [
       app: :elixir_scaffold,
-      version: "0.1.10",
+      version: "0.1.11",
       elixir: "~> 1.12",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env() == :prod,
