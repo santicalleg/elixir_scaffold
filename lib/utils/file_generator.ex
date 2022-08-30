@@ -1,6 +1,6 @@
-defmodule ElixirStructureManager.Utils.FileGenerator do
+defmodule ScaffoldCa.Utils.FileGenerator do
 
-  alias ElixirStructureManager.Utils.StringContent
+  alias ScaffoldCa.Utils.StringContent
 
   def create_file(project_file_path, template_path, token_list) do
     app_path = Application.app_dir(:scaffold_ca)

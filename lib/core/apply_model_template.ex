@@ -1,7 +1,7 @@
-defmodule ElixirStructureManager.Core.ApplyModelTemplate do
+defmodule ScaffoldCa.Core.ApplyModelTemplate do
 
-  alias ElixirStructureManager.Utils.StringContent
-  alias ElixirStructureManager.Utils.FileGenerator
+  alias ScaffoldCa.Utils.StringContent
+  alias ScaffoldCa.Utils.FileGenerator
 
   @model_template_path "/priv/create_structure/templates/model.txt"
   @behaviour_template_path "/priv/create_structure/templates/behaviour.txt"
@@ -39,5 +39,5 @@ defmodule ElixirStructureManager.Core.ApplyModelTemplate do
       err -> Mix.raise("Invalid name indicated: " <> elem(err, 2))
     end
   end
-  
+
 end

@@ -1,6 +1,6 @@
 defmodule ApplyModelTest do
   use ExUnit.Case
-  alias ElixirStructureManager.Core.ApplyModelTemplate
+  alias ScaffoldCa.Core.ApplyModelTemplate
 
   import Mock
   import ExUnit.Assertions

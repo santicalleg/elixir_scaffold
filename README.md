@@ -1,4 +1,4 @@
-# ElixirStructureManager
+# ScaffoldCa
 
 Elixir plugin to create an elixir application based on Clean Architecture following our best practices!
 

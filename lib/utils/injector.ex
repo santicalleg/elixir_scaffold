@@ -1,5 +1,5 @@
-defmodule ElixirStructureManager.Utils.Injector do
-  
+defmodule ScaffoldCa.Utils.Injector do
+
   @spec inject_dependency(String.t(), String.t()) ::
           :ok | :already_injected | {:error, :unable_to_inject}
   def inject_dependency(file_path, dependency) do
@@ -10,9 +10,9 @@ defmodule ElixirStructureManager.Utils.Injector do
          {:ok, new_file_content} <- do_mix_dependency_inject(file_content, dependency) do
       File.write!(file_path, new_file_content)
     end
-  
+
   end
-  
+
   @spec inject_dependency(String.t(), String.t(), String.t()) ::
           :ok | :already_injected | {:error, :unable_to_inject}
   def inject_dependency(file_content, file_path, dependency) do
@@ -36,7 +36,7 @@ defmodule ElixirStructureManager.Utils.Injector do
         new_mixfile =
           "#{left}#{deps_header}      #{dependecy},#{right}"
         {:ok, new_mixfile}
-      [_] -> 
+      [_] ->
         {:error, :unable_to_inject}
     end
 

@@ -1,4 +1,4 @@
-defmodule ElixirStructureManager.MixProject do
+defmodule ScaffoldCa.MixProject do
   use Mix.Project
 
   def project do

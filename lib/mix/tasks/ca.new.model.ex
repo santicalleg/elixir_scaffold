@@ -13,8 +13,8 @@ defmodule Mix.Tasks.Ca.New.Model do
       $ mix ca.new.model [model name] --bh --bh-name [behaviour_name]
   """
 
-  alias ElixirStructureManager.Core.ApplyModelTemplate
-  alias ElixirStructureManager.Utils.DataTypeUtils
+  alias ScaffoldCa.Core.ApplyModelTemplate
+  alias ScaffoldCa.Utils.DataTypeUtils
   use Mix.Task
 
   @behaviour_string "behaviour"
@@ -69,5 +69,5 @@ defmodule Mix.Tasks.Ca.New.Model do
 
     Mix.shell().info([:green, "* Behaviour ", :reset, behavior_name, :green, " created"])
   end
-  
+
 end

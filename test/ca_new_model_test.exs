@@ -1,11 +1,11 @@
 defmodule Ca.New.ModelTest do
   use ExUnit.Case
-  
+
   import Mock
-  
+
   alias Mix.Tasks.Ca.New.Model
-  alias ElixirStructureManager.Utils.DataTypeUtils
-  alias ElixirStructureManager.Core.ApplyModelTemplate
+  alias ScaffoldCa.Utils.DataTypeUtils
+  alias ScaffoldCa.Core.ApplyModelTemplate
 
   test "should shows helper information" do
     assert :ok === Model.run([])
@@ -15,11 +15,11 @@ defmodule Ca.New.ModelTest do
     Mix.Tasks.Ca.New.Model.run(["-v"])
     assert_received {:mix_shell, :info, ["Scaffold version v" <> _]}
   end
-  
+
   test "should shows helper information when parameters are invalid" do
     assert :ok === Model.run(["--bh"])
   end
-  
+
   test "should return error when an elixir project is invalid" do
     with_mock(Keyword, [fetch: fn(_app_name, :app) -> :error end]) do
       Model.run(["model_name"])
@@ -37,7 +37,7 @@ defmodule Ca.New.ModelTest do
       assert_received {:mix_shell, :info, ["* Model" <> _]}
     end
   end
-  
+
   test "should create a model and behaviour without name" do
     with_mocks([
       {Keyword, [], [fetch: fn(_app_name, :app) -> {:ok, :hello_world} end]},

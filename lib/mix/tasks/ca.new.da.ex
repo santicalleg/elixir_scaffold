@@ -13,8 +13,8 @@ defmodule Mix.Tasks.Ca.New.Da do
 
   """
 
-  alias ElixirStructureManager.Core.ApplyDrivenAdapterTemplate
-  alias ElixirStructureManager.Utils.DataTypeUtils
+  alias ScaffoldCa.Core.ApplyDrivenAdapterTemplate
+  alias ScaffoldCa.Utils.DataTypeUtils
   use Mix.Task
 
   @version Mix.Project.config()[:version]
@@ -35,7 +35,7 @@ defmodule Mix.Tasks.Ca.New.Da do
         Mix.shell().error("It is not a elixir project")
 
       {:ok, app_name} ->
-       apply_template(app_name, args) 
+       apply_template(app_name, args)
     end
   end
 

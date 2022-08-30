@@ -6,8 +6,8 @@ defmodule Mix.Tasks.Ca.New.Structure do
       $ mix create_structure [application_name]
   """
 
-  alias ElixirStructureManager.Core.ApplyTemplate
-  alias ElixirStructureManager.Utils.DataTypeUtils
+  alias ScaffoldCa.Core.ApplyTemplate
+  alias ScaffoldCa.Utils.DataTypeUtils
   require Logger
 
   use Mix.Task

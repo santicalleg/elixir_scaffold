@@ -1,7 +1,7 @@
-defmodule ElixirStructureManager.Core.ApplyTemplate do
+defmodule ScaffoldCa.Core.ApplyTemplate do
 
   require Logger
-  alias ElixirStructureManager.Utils.StringContent
+  alias ScaffoldCa.Utils.StringContent
 
   def create_variables_list(atom_name, module_name) do
     {
