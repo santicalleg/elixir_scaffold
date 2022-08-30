@@ -1,6 +1,7 @@
-defmodule ElixirScaffold.Core.ApplyTemplates do
+defmodule ElixirStructureManager.Core.ApplyTemplate do
 
   require Logger
+  alias ElixirStructureManager.Utils.StringContent
 
   def create_variables_list(atom_name, module_name) do
     {
@@ -33,22 +34,14 @@ defmodule ElixirScaffold.Core.ApplyTemplates do
 
   defp create_files([head | tail], folder_path, variable_list) do
     %{name: name, template_path: template_path} = head
-    app_path = Application.app_dir(:elixir_scaffold)
+    app_path = Application.app_dir(:scaffold_ca)
     with file_full_path <- folder_path <> "/" <> name,
          :ok <- create_content(file_full_path),
          {:ok, file_content} <- File.read(app_path <> template_path),
-         full_file_content <- replace_variables(variable_list, file_content),
+         full_file_content <- StringContent.replace(variable_list, file_content),
          :ok <- File.write(file_full_path, full_file_content) do
       create_files(tail, folder_path, variable_list)
     end
-  end
-
-  defp replace_variables([], content) do
-    Logger.info("Se reemplazaron las variables")
-    content
-  end
-  defp replace_variables([%{name: variable_name, value: value} | tail], content) do
-    replace_variables(tail, String.replace(content, variable_name, value))
   end
 
   def manage_application_name(application_name) do

@@ -1,12 +1,12 @@
-defmodule ElixirScaffold.MixProject do
+defmodule ElixirStructureManager.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :elixir_scaffold,
-      version: "0.1.12",
+      app: :scaffold_ca,
+      version: "0.1.0",
       elixir: "~> 1.12",
-      build_embedded: Mix.env == :prod,
+      build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       description: description(),
       package: package(),
@@ -22,10 +22,11 @@ defmodule ElixirScaffold.MixProject do
 
   defp package() do
     [
+      organization: "bancolombia",
       files: ["lib", "priv", "mix.exs", "README*", "LICENSE*"],
-      maintainers: ["Santiago Calle Gomez"],
+      maintainers: ["Juan Esteban, Santiago Calle", "Juan Carlos Galvis"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/santicalleg/elixir_scaffold"}
+      links: %{"GitHub" => "https://github.com/bancolombia/scaffold-clean-architecture-ex"}
     ]
   end
 
