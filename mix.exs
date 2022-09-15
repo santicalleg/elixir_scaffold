@@ -22,10 +22,11 @@ defmodule ScaffoldCa.MixProject do
 
   defp package() do
     [
+      organization: "bancolombia",
       files: ["lib", "priv", "mix.exs", "README*", "LICENSE*"],
-      maintainers: ["Santiago Calle"],
+      maintainers: ["Juan Esteban", "Santiago Calle", "Juan Carlos Galvis"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/santicalleg/elixir_scaffold"}
+      links: %{"GitHub" => "https://github.com/bancolombia/scaffold-clean-architecture-ex"}
     ]
   end
 
