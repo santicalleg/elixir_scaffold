@@ -22,7 +22,6 @@ defmodule ScaffoldCa.MixProject do
 
   defp package() do
     [
-      organization: "bancolombia",
       files: ["lib", "priv", "mix.exs", "README*", "LICENSE*"],
       maintainers: ["Santiago Calle"],
       licenses: ["MIT"],
