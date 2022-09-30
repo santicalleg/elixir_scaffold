@@ -1,7 +1,7 @@
 defmodule Mix.Tasks.Ca.New.Ep do
   @moduledoc """
   Creates a new driven adapter for the clean architecture project
-  mix ca.new.ep --type entry_point_name
+      $ mix ca.new.ep --type entry_point_name
 
   Type param options:
 
@@ -9,19 +9,23 @@ defmodule Mix.Tasks.Ca.New.Ep do
 
   Examples:
       $ mix ca.new.ep --type entry_point_name --name my_adapter
-      $ mix ca.new.da --type asynceventhandler
+      $ mix ca.new.ep -t entry_point_name -n my_adapter
+      $ mix ca.new.ep --type asynceventhandler
+      $ mix ca.new.ep -t asynceventhandler
 
   """
 
   alias ScaffoldCa.Core.ApplyTemplate
+  alias ScaffoldCa.Utils.CommonCommands
   alias Mix.Tasks.Ca.BaseTask
 
   use BaseTask,
     name: "ca.new.ep",
     description: "Creates a new entry point",
-    switches: [type: :string, name: :string]
+    switches: [type: :string, name: :string],
+    aliases: [t: :type, n: :name]
 
-  def execute({opts, []}) do
+  def execute({opts, []}) when opts != nil and length(opts) > 0 do
     Mix.shell().info([:green, "* Creating entry point ", :reset, opts[:type]])
 
     ApplyTemplate.apply(
@@ -30,7 +34,9 @@ defmodule Mix.Tasks.Ca.New.Ep do
     )
 
     Mix.shell().info([:green, "* Entry Point created"])
+
+    CommonCommands.install_deps()
   end
 
-  def execute(_any), do: run([])
+  def execute(_any), do: run(["-h"])
 end
