@@ -50,7 +50,7 @@ jobs:
           force-add: "true"
           files: mix.exs
           name: Release Bot
-          email: release-bot@bancolombia.com.co
+          email: santicalleg@hotmail.com
       - name: Publish
         if: github.event_name == 'release'
         run: echo "========== PUBLISH!!! =========="
