@@ -1,10 +1,12 @@
 defmodule ScaffoldCa.MixProject do
   use Mix.Project
 
+  @version "0.1.3"
+
   def project do
     [
       app: :scaffold_ca,
-      version: "0.1.2",
+      version: @version,
       elixir: "~> 1.12",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
