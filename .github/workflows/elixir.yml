@@ -2,9 +2,9 @@ name: Elixir Scaffold Test CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
   release:
     types: [ created ]
 
@@ -43,7 +43,7 @@ jobs:
         uses: github-actions-x/commit@722d56b8968bf00ced78407bbe2ead81062d8baa
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: main
+          push-branch: master
           commit-message: 'Upgrade version to ${{ env.RELEASE_VERSION }}'
           force-add: "true"
           files: mix.exs
