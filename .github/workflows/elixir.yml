@@ -23,7 +23,7 @@ jobs:
       - name: Echo Event
         run: echo "${{ github.event_name }}"
       - name: Set up Elixir
-        uses: erlef/setup-elixir@1.15.2
+        uses: erlef/setup-beam@v1.15.2
         with:
           elixir-version: '1.13.4' # Define the elixir version [required]
           otp-version: '24' # Define the OTP version [required]
